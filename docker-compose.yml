@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  backoffice:
+    image: nginx:1.14
+    ports:
+      - 3000:80
+    volumes:
+      - ./packages/backoffice/build:/usr/share/nginx/html
+  mongodb:
+    image: 'mongo:4.1'
+    ports:
+      - '27017:27017'
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    image: server:latest
+    ports:
+      - "8083:8083"
+    stdin_open: true  # -i
+    tty: true         # -t
+    environment:
+      - NODE_ENV=development
+

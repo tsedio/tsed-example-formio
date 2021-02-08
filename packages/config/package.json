@@ -1,0 +1,27 @@
+{
+  "name": "@project/config",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "main:src": "src/index.js",
+  "description": "Shared configuration",
+  "author": "Romain Lenzotti",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "4.0.1"
+  },
+  "devDependencies": {
+    "@craco/craco": "6.0.0",
+    "@project/tailwind": "1.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@tsed/yarn-workspaces": "1.15.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-to-json": "3.4.4"
+  },
+  "peerDependencies": {}
+}

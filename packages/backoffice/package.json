@@ -1,0 +1,33 @@
+{
+  "name": "@project/backoffice",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Romain Lenzotti",
+  "dependencies": {
+    "@project/shared": "1.0.0",
+    "axios": "0.21.1",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "start": "yarn craco start",
+    "build": "yarn craco build",
+    "test": "yarn craco test",
+    "lint:fix": "yarn lint --fix",
+    "lint": "yarn eslint --config .eslintrc --cache --quiet ./src/**/*.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
