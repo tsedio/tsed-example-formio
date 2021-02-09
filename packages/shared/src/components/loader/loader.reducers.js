@@ -1,4 +1,4 @@
-import { createReducer } from '../../utils/redux'
+import { createReducer } from '@project/redux-utils'
 import { hideLoader, showLoader } from './loader.actions'
 
 const createInitialState = (options = {}) => ({
