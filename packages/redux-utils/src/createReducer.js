@@ -1,3 +1,5 @@
+// @flow
+
 export interface Reduce {
   (type: string, state: any, payload: any): any;
 
@@ -22,6 +24,10 @@ export function createReducer (reducers: any, createInitialState?: (state: any) 
 
       if (reducers[type]) {
         return reduce.$emit(type, state, payload)
+      }
+
+      if (reducers.default) {
+        return reduce.$emit('default', state, payload)
       }
 
       return state

@@ -44,4 +44,33 @@ describe('createReducer()', () => {
       }
     })
   })
+  it('should call the default reducer', () => {
+    const action = createAction()
+    const reducer = createReducer({
+      [action] (state, payload) {
+        return {
+          ...state,
+          data: payload.data
+        }
+      },
+      default (state) {
+        return {
+          ...state,
+          defaultValue: 'value'
+        }
+      }
+    }, (options) => ({ test: 'test', options }))
+
+    const sandboxReducer = reducer('sandbox', { config: 'config' })
+    const state = sandboxReducer(undefined, { name: 'sandbox', payload: { data: [] } })
+
+    expect(state).toEqual({
+      'name': 'sandbox',
+      'test': 'test',
+      'options': {
+        'config': 'config'
+      },
+      'defaultValue': 'value'
+    })
+  })
 })

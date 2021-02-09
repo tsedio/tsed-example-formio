@@ -1,0 +1,21 @@
+{
+  "name": "@project/redux-utils",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "main:src": "src/index.js",
+  "description": "Redux utils",
+  "author": "Romain Lenzotti",
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn craco test",
+    "lint:fix": "yarn lint --fix",
+    "lint": "yarn eslint --config .eslintrc --cache --quiet ./src/**/*.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@project/config": "1.0.0"
+  },
+  "peerDependencies": {
+  }
+}
