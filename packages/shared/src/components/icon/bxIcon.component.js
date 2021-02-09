@@ -11,5 +11,6 @@ export function BxIcon ({ name, color, className = '' }) {
 BxIcon.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
+  size: PropTypes.string,
   className: PropTypes.string
 }

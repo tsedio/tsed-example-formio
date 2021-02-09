@@ -1,15 +1,25 @@
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
 import React from 'react'
-import { FadeComponent } from '../fade/fade.component'
+import { Fade } from '../fade/fade.component'
+import { BxIcon } from '../icon/bxIcon.component'
 
-export function Loader ({ isActive }) {
+export function Loader ({ isActive, color = 'blue', icon = 'bx-radio-circle', className = '' }) {
   return (
-    <div className="opacity-85 z-20 relative">
-      <FadeComponent show={isActive}>
+    <div className={classnames('opacity-85 z-20 relative', className)}>
+      <Fade show={isActive}>
         <div
           className="flex items-center justify-center p-5 fixed top-0 right-0 left-0 bottom-0 bg-white">
-          <i className="fas fa-spinner text-5xl rotateInfinite"/>
+          <BxIcon name={icon} color={color} className={'text-11xl bx-burst'}/>
         </div>
-      </FadeComponent>
+      </Fade>
     </div>
   )
+}
+
+Loader.propTypes = {
+  isActive: PropTypes.bool,
+  icon: PropTypes.bool,
+  color: PropTypes.string,
+  className: PropTypes.string
 }

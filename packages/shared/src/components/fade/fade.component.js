@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-export function FadeComponent ({ show, children }) {
+export function Fade ({ show, children }) {
   const [shouldRender, setRender] = useState(show)
+
   useEffect(() => {
     if (show) setRender(true)
   }, [show])
@@ -13,7 +14,7 @@ export function FadeComponent ({ show, children }) {
   return (
     shouldRender ? (
       <div
-        className={show ? ' w-full fadeIn' : ' w-full fadeOut'}
+        className={show ? 'w-full fadeIn' : 'w-full fadeOut'}
         onAnimationEnd={onAnimationEnd}>
         {children}
       </div>
