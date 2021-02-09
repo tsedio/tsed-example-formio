@@ -46,9 +46,7 @@ if (isProduction) {
     disableRoutesSummary: isProduction
   },
   mount: {
-    "/rest": [
-      `${rootDir}/controllers/rest/**/*.ts`
-    ],
+    "/rest": [`${rootDir}/controllers/rest/**/*.ts`],
     "/": [VersionCtrl]
   },
   swagger: swaggerConfig,
@@ -58,9 +56,7 @@ if (isProduction) {
   },
   mongoose: mongooseConfig,
   formio: formioConfig,
-  exclude: [
-    "**/*.spec.ts"
-  ]
+  exclude: ["**/*.spec.ts"]
 })
 export class Server {
   @Inject()
@@ -76,8 +72,10 @@ export class Server {
       .use(compress({}))
       .use(methodOverride())
       .use(bodyParser.json())
-      .use(bodyParser.urlencoded({
-        extended: true
-      }));
+      .use(
+        bodyParser.urlencoded({
+          extended: true
+        })
+      );
   }
 }

@@ -32,9 +32,6 @@ node_modules
 .npmrc
 *.log
 
-# Typings
-typings/
-
 # Typescript
 src/**/*.js
 src/**/*.js.map
@@ -55,3 +52,4 @@ test/**/*.js.map
 /public
 **/dist
 **/build
+**/lib

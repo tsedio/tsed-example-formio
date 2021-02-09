@@ -23,15 +23,57 @@
     "docker:build": "yarn build && docker-compose build"
   },
   "dependencies": {
+    "@tsed/redux-utils": "^1.1.2",
+    "@tsed/react-formio": "^1.1.2",
+    "@tsed/tailwind-formio": "^1.1.2",
     "lerna": "3.22.1",
-    "pm2": "4.5.1"
+    "pm2": "4.5.1",
+    "classnames": "2.2.6",
+    "connected-react-router": "6.8.0",
+    "formiojs": "^4.12.7",
+    "lodash": "4.17.20",
+    "prop-types": "15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "7.2.2",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "redux-thunk": "2.3.0",
+    "react-formio": "4.3.0",
+    "react-redux-toastr": "7.6.5",
+    "react-table": "^7.6.3",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@types/prop-types": "15.7.3",
+    "@types/ejs": "3.0.5",
+    "@types/node": "^14.14.20",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-router": "5.1.11",
+    "@types/react-router-dom": "5.1.7",
+    "@types/lodash": "4.14.168",
     "@types/jest": "26.0.20",
+    "@types/react-redux": "7.1.16",
+    "@types/react-redux-toastr": "7.6.0",
+    "@types/classnames": "2.2.11",
     "@types/enzyme": "3.10.8",
-    "husky": "5.0.6",
-    "lint-staged": "10.5.3",
+    "@types/react-table": "7.0.28",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "cross-env": "7.0.3",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-config-standard-react": "11.0.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-promise": "4.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-standard": "5.0.0",
+    "prettier": "2.2.1",
+    "husky": "5.0.9",
+    "lint-staged": "10.5.3",
     "webpack": "4.44.2"
   },
   "workspaces": {
@@ -39,10 +81,6 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/@types",
-      "**/@types/**",
-      "**/@tsed",
-      "**/@tsed/**",
       "packages/*/**/webpack-dev-server",
       "**/babel-loader",
       "**/babel-jest"
@@ -55,12 +93,16 @@
     }
   },
   "lint-staged": {
-    "packages/backoffice/**/*.{js,jsx}": [
-      "cd packages/backoffice && yarn lint:fix && yarn prettier",
+    "packages/backoffice/**/*.{ts,tsx,js,jsx}": [
+      "cd packages/backoffice && yarn lint:fix && yarn prettier:fix",
+      "git add"
+    ],
+    "packages/shared/**/*.{ts,tsx,js,jsx}": [
+      "cd packages/backoffice && yarn lint:fix && yarn prettier:fix",
       "git add"
     ],
     "packages/server/**/*.{ts}": [
-      "cd packages/server && yarn lint:fix && yarn prettier",
+      "cd packages/server && yarn lint:fix && yarn prettier:fix",
       "git add"
     ]
   }

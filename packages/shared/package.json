@@ -1,21 +1,26 @@
 {
   "name": "@project/shared",
   "version": "1.0.0",
-  "main": "src/index.js",
-  "main:src": "src/index.js",
+  "main": "src/index.ts",
+  "module": "dist/index.modern.js",
+  "source": "src/index.ts",
   "description": "Shared components",
   "author": "Romain Lenzotti",
   "license": "MIT",
   "scripts": {
     "test": "yarn craco test",
     "lint:fix": "yarn lint --fix",
-    "lint": "yarn eslint --config .eslintrc --cache --quiet ./src/**/*.js"
+    "lint": "yarn eslint --config .eslintrc --cache --quiet \"./src/**/*.{ts,tsx}\"",
+    "prettier:fix": "yarn prettier \"{src,test}/**/*.{ts,tsx}\" --write"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@project/tailwind": "1.0.0",
+    "@project/config": "1.0.0"
+  },
   "devDependencies": {
-    "@project/config": "1.0.0",
-    "@project/tailwind": "1.0.0"
+
   },
   "peerDependencies": {
+
   }
 }

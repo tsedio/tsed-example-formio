@@ -5,7 +5,7 @@ import {Hidden, Returns} from "@tsed/schema";
 @Hidden()
 export class HealthCtrl {
   @Get("/")
-  @Returns(200).ContentType("plain/text")
+  @(Returns(200).ContentType("plain/text"))
   get() {
     return "OK";
   }
