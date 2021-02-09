@@ -27,14 +27,14 @@
     "pm2": "4.5.1"
   },
   "devDependencies": {
-    "@types/jest": "26.0.20",
     "@types/enzyme": "3.10.8",
-    "husky": "5.0.6",
-    "lint-staged": "10.5.3",
+    "@types/jest": "26.0.20",
+    "connected-react-router": "6.8.0",
     "cross-env": "7.0.3",
-    "webpack": "4.44.2",
     "history": "5.0.0",
-    "connected-react-router": "6.8.0"
+    "husky": "^5.0.9",
+    "lint-staged": "10.5.3",
+    "webpack": "4.44.2"
   },
   "workspaces": {
     "packages": [

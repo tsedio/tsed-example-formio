@@ -2,35 +2,17 @@
   "name": "@project/react-formio",
   "version": "1.0.0",
   "private": true,
+  "main": "src/index.js",
   "dependencies": {
-    "react-formio": "4.3.0"
+    "eventemitter2": "6.4.3"
   },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1"
+    "formiojs": "^4.12.8-rc.1"
   },
   "devDependencies": {
-    "@project/tailwind": "1.0.0"
+    "@project/redux-utils": "1.0.0"
   },
   "scripts": {
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "test": "yarn craco test"
   }
 }

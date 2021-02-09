@@ -1,0 +1,7 @@
+@import '~formiojs/dist/formio.full.css';
+@import "./alert.css";
+@import "./button.css";
+@import "./form.css";
+@import "./input-group.css";
+@import "./checkbox.css";
+@import "./tooltip.css";

@@ -55,3 +55,4 @@ test/**/*.js.map
 /public
 **/dist
 **/build
+**/lib
