@@ -1,4 +1,6 @@
 @import "./tailwind.css";
-@import "./fonts.css";
-@import "./typography.css";
+@import "./fonts/source-sans-pro/index.css";
+@import "./fonts/inconsolata/index.css";
+@import "./fonts/bxicons/index.css";
 @import "./animations.css";
+@import "./typography.css";

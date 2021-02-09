@@ -11,11 +11,19 @@
     "lint:fix": "yarn lint --fix",
     "lint": "yarn eslint --config .eslintrc --cache --quiet ./src/**/*.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "2.2.6",
+    "connected-react-router": "6.8.0",
+    "history": "^4.9.0",
+    "lodash": "^4.17.20",
+    "prop-types": "15.7.2",
+    "react-redux": "7.2.2",
+    "redux": "4.0.5",
+    "redux-thunk": "2.3.0"
+  },
   "devDependencies": {
     "@project/config": "1.0.0",
     "@project/tailwind": "1.0.0"
   },
-  "peerDependencies": {
-  }
+  "peerDependencies": {}
 }

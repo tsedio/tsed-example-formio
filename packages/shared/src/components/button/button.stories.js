@@ -42,15 +42,15 @@ export default {
 
 export const Sandbox = (args) => {
   return (
-    <Button {...args}>{args.label}</Button>
+    <Button {...args}>{args.children}</Button>
   )
 }
 
 Sandbox.args = {
-  label: 'Hello world',
-  bgColor: COLORS.BLUE,
-  borderColor: COLORS.BLUE,
-  color: COLORS.WHITE,
+  children: 'Hello world',
+  bgColor: COLORS.primary,
+  borderColor: COLORS.primary,
+  color: COLORS.white,
   disabled: false,
   fontWeight: 'bold',
   paddingX: 4,

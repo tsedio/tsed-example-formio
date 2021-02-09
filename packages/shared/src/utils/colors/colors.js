@@ -1,41 +1,8 @@
-export const COLORS = {
-  AMBER: 'amber',
-  ARDOISE: 'ardoise',
-  BLUE: 'blue',
-  DEEP_BLUE: 'deepBlue',
-  GOLD: 'gold',
-  GRAY: 'gray',
-  GRENADINE: 'grenadine',
-  KIWI: 'kiwi',
-  LILAS: 'lilas',
-  MAHOGANY: 'mahogany',
-  OCHER: 'ocher',
-  PINE: 'pine',
-  PLATINUM: 'platinum',
-  PRUNE: 'prune',
-  SAND: 'sand',
-  SAND_PEARL: 'sandPearl',
-  SILVER: 'silver',
-  SKY_BLUE: 'skyBlue',
-  SOUTH_SEA: 'southSea',
-  TURQUOISE: 'turquoise',
-  WATER_GREEN: 'waterGreen',
-  BLACK: 'black',
-  DEEP_RED: 'deepRed',
-  EMERALD: 'emerald',
-  ORANGE: 'orange',
-  RED: 'red',
-  YELLOW: 'yellow',
-  WHITE: 'white',
-  GRAY_LIGHTER: 'gray-lighter',
-  GRAY_LIGHT: 'gray-light',
-  GRAY_MEDIUM: 'gray-medium',
-  GRAY_DARK: 'gray-dark',
-  GRAY_DARKER: 'gray-darker',
-  DANGER: 'danger',
-  INFO: 'info',
-  SUCCESS: 'success',
-  WARNING: 'warning'
-}
+export const COLORS = Object.keys(require('@project/tailwind').theme.colors).reduce((obj, key) => {
+  return {
+    ...obj,
+    [key]: key
+  }
+}, {})
 
-export const COLORS_LIST = Object.values(COLORS)
+export const COLORS_LIST = Object.keys(COLORS).filter((key) => !['current'].includes(key) && !key.match('-active')).sort((a, b) => a < b ? -1 : 1)

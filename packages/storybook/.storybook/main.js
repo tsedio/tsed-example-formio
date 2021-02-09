@@ -4,18 +4,25 @@ const { plugins } = require('@project/config/postcss.config')
 const rootDir = join(__dirname, '..', 'src')
 
 const sharedDir = dirname(require.resolve('@project/shared'))
+const formioDir = dirname(require.resolve('@project/react-formio'))
+
 const componentsDir = resolve(sharedDir, 'components')
-const pathToInlineSvg = resolve(componentsDir, 'src/statics/svg')
-const pathToFonts = resolve(componentsDir, 'src/fonts')
+const pathToInlineSvg = resolve(sharedDir, 'statics/svg')
+const pathToFonts = resolve(sharedDir, 'styles/fonts')
+
+const scanDirs = (dir) => [
+  join(dir, '**/*.stories.mdx'),
+  join(dir, '**/*.story.mdx'),
+  join(dir, '**/*.story.@(js|jsx|ts|tsx)'),
+  join(dir, '**/*.stories.@(js|jsx|ts|tsx)')
+]
 
 module.exports = {
   'stories': [
     join(rootDir, '**/*.stories.mdx'),
     join(rootDir, '**/*.stories.@(js|jsx|ts|tsx)'),
-    join(componentsDir, '**/*.stories.mdx'),
-    join(componentsDir, '**/*.story.mdx'),
-    join(componentsDir, '**/*.story.@(js|jsx|ts|tsx)'),
-    join(componentsDir, '**/*.stories.@(js|jsx|ts|tsx)')
+    ...scanDirs(componentsDir),
+    ...scanDirs(join(formioDir, 'components'))
   ],
   'addons': [
     '@storybook/addon-links',

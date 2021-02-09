@@ -84,7 +84,7 @@ a:not(.reset-link) {
   transition: all ease-in 500ms;
 
   &:hover {
-    @apply text-blue-active;
+    @apply text-primary-active;
   }
 }
 

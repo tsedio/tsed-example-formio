@@ -1,28 +1,26 @@
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
 import React from 'react'
 
-export const Button = (props) => {
-  let {
-    component: Component = 'button',
-    children,
-    borderColor,
-    bgColor = 'blue',
-    color = 'white',
-    fontWeight = 'bold',
-    rounded = 'small',
-    paddingX = 4,
-    paddingY = 1,
-    disabled,
-    shadow = 'none',
-    ...otherProps
-  } = props
+export const Button = ({
+                         component: Component = 'button',
+                         children,
+                         borderColor,
+                         bgColor = 'primary',
+                         variant = 800,
+                         color = 'white',
+                         fontWeight = 'bold',
+                         rounded = 'sm',
+                         paddingX = 4,
+                         paddingY = 1,
+                         disabled,
+                         shadow = 'none',
+                         className = '',
+                         ...otherProps
+                       }) => {
 
-  if (bgColor === 'blue' && color === 'white') {
-    color = 'white-button'
-  }
-
-  if (disabled) {
-    bgColor = 'gray-light'
-    borderColor = 'gray-light'
+  if (bgColor === 'primary') {
+    variant = 'active'
   }
 
   if (!borderColor) {
@@ -30,19 +28,33 @@ export const Button = (props) => {
   }
 
   const classNames = `inline-flex flex-col items-stretch overflow-hidden text-base transition-colors
-  bg-${bgColor} border-${borderColor} text-${color} focus:bg-${bgColor}-active focus:border-${borderColor}-active
-  hover:bg-${bgColor}-active hover:border-${borderColor}-active focus:text-${color}-active hover:text-${color}-active
-   cursor-pointer border-1 border-solid rounded-${rounded} shadow-${shadow}`
+  bg-${bgColor} border-${borderColor} text-${color} focus:bg-${bgColor}-${variant} focus:border-${borderColor}-${variant}
+  hover:bg-${bgColor}-${variant} hover:border-${borderColor}-${variant} focus:text-${color}-${variant} hover:text-${color}-${variant}
+  border-1 border-solid rounded-${rounded} shadow-${shadow} ${disabled ? 'opacity-50' : 'cursor-pointer'}`
 
   return (
     <Component
       {...otherProps}
       disabled={disabled}
-      className={`${classNames} ${props.className}`}>
+      className={classnames(classNames, className)}>
       <span
         className={`reset-link flex justify-center items-center w-full font-${fontWeight} px-${paddingX} py-${paddingY}`}>
         <span className="m-1 text-center flex justify-center items-center">{children}</span>
       </span>
     </Component>
   )
+}
+
+Button.propTypes = {
+  component: PropTypes.any,
+  children: PropTypes.node,
+  borderColor: PropTypes.string,
+  bgColor: PropTypes.string,
+  color: PropTypes.string,
+  fontWeight: PropTypes.string,
+  rounded: PropTypes.string,
+  paddingX: PropTypes.number,
+  paddingY: PropTypes.number,
+  disabled: PropTypes.bool,
+  shadow: PropTypes.string
 }

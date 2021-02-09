@@ -2,7 +2,7 @@ import { mount } from 'enzyme'
 import React from 'react'
 import { Button } from './button.component'
 
-describe('Button Component', () => {
+describe('Button', () => {
   describe('rendering', () => {
     it('should render a button with default tag and label', () => {
       // WHEN
@@ -11,16 +11,14 @@ describe('Button Component', () => {
       // THEN
       const button = component.find('button')
       expect(component.find('button span span').contains('Label')).toEqual(true)
-      expect(button.hasClass('bg-blue')).toEqual(true)
-      expect(button.hasClass('text-white-button')).toEqual(true)
-      expect(button.hasClass('border-blue')).toEqual(true)
-      expect(button.hasClass('focus:bg-blue-active')).toEqual(true)
-      expect(button.hasClass('focus:border-blue-active')).toEqual(true)
-      expect(button.hasClass('hover:bg-blue-active')).toEqual(true)
-      expect(button.hasClass('hover:border-blue-active')).toEqual(true)
-      expect(button.hasClass('focus:text-white-button-active')).toEqual(true)
-      expect(button.hasClass('hover:text-white-button-active')).toEqual(true)
-
+      expect(button.hasClass('bg-primary')).toEqual(true)
+      expect(button.hasClass('border-primary')).toEqual(true)
+      expect(button.hasClass('text-white')).toEqual(true)
+      expect(button.hasClass('focus:bg-primary-active')).toEqual(true)
+      expect(button.hasClass('focus:border-primary-active')).toEqual(true)
+      expect(button.hasClass('hover:bg-primary-active')).toEqual(true)
+      expect(button.hasClass('hover:border-primary-active')).toEqual(true)
+      expect(button.hasClass('cursor-pointer')).toEqual(true)
       expect(component.find('button > span').hasClass('font-bold')).toEqual(true)
       expect(component.find('button > span').hasClass('px-4')).toEqual(true)
       expect(component.find('button > span').hasClass('py-1')).toEqual(true)
@@ -41,15 +39,7 @@ describe('Button Component', () => {
       // THEN
       const button = component.find('button')
 
-      expect(button.hasClass('bg-gray-light')).toEqual(true)
-      expect(button.hasClass('text-white-button')).toEqual(true)
-      expect(button.hasClass('border-gray-light')).toEqual(true)
-      expect(button.hasClass('focus:bg-gray-light-active')).toEqual(true)
-      expect(button.hasClass('focus:border-gray-light-active')).toEqual(true)
-      expect(button.hasClass('hover:bg-gray-light-active')).toEqual(true)
-      expect(button.hasClass('hover:border-gray-light-active')).toEqual(true)
-      expect(button.hasClass('focus:text-white-button-active')).toEqual(true)
-      expect(button.hasClass('hover:text-white-button-active')).toEqual(true)
+      expect(button.hasClass('opacity-50')).toEqual(true)
     })
 
     it('should render button with customer color', () => {
@@ -68,12 +58,12 @@ describe('Button Component', () => {
       expect(button.hasClass('bg-red')).toEqual(true)
       expect(button.hasClass('text-black')).toEqual(true)
       expect(button.hasClass('border-yellow')).toEqual(true)
-      expect(button.hasClass('focus:bg-red-active')).toEqual(true)
-      expect(button.hasClass('focus:border-yellow-active')).toEqual(true)
-      expect(button.hasClass('hover:bg-red-active')).toEqual(true)
-      expect(button.hasClass('hover:border-yellow-active')).toEqual(true)
-      expect(button.hasClass('focus:text-black-active')).toEqual(true)
-      expect(button.hasClass('hover:text-black-active')).toEqual(true)
+      expect(button.hasClass('focus:bg-red-800')).toEqual(true)
+      expect(button.hasClass('focus:border-yellow-800')).toEqual(true)
+      expect(button.hasClass('hover:bg-red-800')).toEqual(true)
+      expect(button.hasClass('hover:border-yellow-800')).toEqual(true)
+      expect(button.hasClass('focus:text-black-800')).toEqual(true)
+      expect(button.hasClass('hover:text-black-800')).toEqual(true)
       expect(component.find('button > span').hasClass('font-lighter')).toEqual(true)
       expect(component.find('button > span').hasClass('px-2')).toEqual(true)
       expect(component.find('button > span').hasClass('py-3')).toEqual(true)
