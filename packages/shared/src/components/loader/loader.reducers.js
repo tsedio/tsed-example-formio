@@ -1,23 +1,22 @@
-import { createReducer } from '@clubmed/components'
-import { HIDE_LOADER, SHOW_LOADER } from './loader.actions'
+import { createReducer } from '../../utils/redux'
+import { hideLoader, showLoader } from './loader.actions'
 
-const createInitialState = () => ({
-  isActive: false
+const createInitialState = (options = {}) => ({
+  isActive: false,
+  ...options
 })
 
-const reducers = {
-  [HIDE_LOADER] (state) {
+export const loaderReducer = createReducer({
+  [hideLoader] (state) {
     return {
       ...state,
       isActive: false
     }
   },
-  [SHOW_LOADER] (state) {
+  [showLoader] (state) {
     return {
       ...state,
       isActive: true
     }
   }
-}
-
-export default createReducer(createInitialState, reducers)
+}, createInitialState)

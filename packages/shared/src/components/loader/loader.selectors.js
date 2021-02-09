@@ -9,7 +9,7 @@ export function getIsActive (name = 'loader') {
 export function oneOfIsActive (...names) {
   return (state) => {
     return !!names.find((name) => {
-      return get(state, `${name}.isActive`, get(state, name + '.current.isActive'))
+      return get(state, `${name}.isActive`, get(state, `${name}.current.isActive`))
     })
   }
 }
