@@ -1,7 +1,10 @@
-import { Button, Loader } from '@project/shared'
+import { Button, Loader, oneOfIsActive } from '@project/shared'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 function App () {
+  const isActive = useSelector(oneOfIsActive('auth', 'loader'))
+
   return (
     <div className="App">
       <main className="container content__default">
@@ -10,7 +13,7 @@ function App () {
         <div>
           <Button>Click</Button>
         </div>
-        <Loader/>
+        <Loader isActive={isActive}/>
       </main>
     </div>
   )

@@ -4,8 +4,13 @@
   "private": true,
   "author": "Romain Lenzotti",
   "dependencies": {
+    "@project/react-formio": "1.0.0",
+    "@project/redux-utils": "1.0.0",
     "@project/shared": "1.0.0",
     "axios": "0.21.1",
+    "formiojs": "^4.12.8-rc.1",
+    "react-formio": "4.3.0",
+    "react-redux-toastr": "7.6.5",
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
