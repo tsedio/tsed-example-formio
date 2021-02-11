@@ -1,0 +1,20 @@
+<div class="relative inline-block">
+  <label class="inline-flex items-center {{ctx.input.labelClass}}" for="{{ctx.id}}">
+    <{{ctx.input.type}}
+      ref="input"
+      id="{{ctx.id}}"
+      {% for (var attr in ctx.input.attr) { %}
+      {{attr}}="{{ (attr === 'class' ? 'rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50': '')}} {{ctx.input.attr[attr]}}"
+      {% } %}
+      {% if (ctx.checked) { %}checked=true{% } %}
+      >
+    </{{ctx.input.type}}>
+    {{ctx.input.content}}
+    {% if (!ctx.self.labelIsHidden()) { %}<span class="ml-2">{{ctx.input.label}}</span>{% } %}
+    {% if (ctx.tooltip) { %}
+      <span data-tooltip="{{ctx.tooltip}}" data-position="right center">
+          <i class="{{ctx.iconClass('question-sign')}}"></i>
+      </span>
+    {% } %}
+  </label>
+</div>
