@@ -22,10 +22,11 @@
     "start:prod": "pm2-docker --raw processes.config.js --no-deamon",
     "docker:build": "yarn build && docker-compose build"
   },
+  "react-table": "^7.6.3",
   "dependencies": {
-    "@tsed/redux-utils": "^1.1.2",
-    "@tsed/react-formio": "^1.1.2",
-    "@tsed/tailwind-formio": "^1.1.2",
+    "@tsed/redux-utils": "^1.1.5",
+    "@tsed/react-formio": "^1.1.5",
+    "@tsed/tailwind-formio": "^1.1.5",
     "lerna": "3.22.1",
     "pm2": "4.5.1",
     "classnames": "2.2.6",
@@ -40,8 +41,9 @@
     "react-router-dom": "5.2.0",
     "redux-thunk": "2.3.0",
     "react-formio": "4.3.0",
+    "react-table": "7.6.3",
     "react-redux-toastr": "7.6.5",
-    "react-table": "^7.6.3",
+    "react-use": "17.1.1",
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {

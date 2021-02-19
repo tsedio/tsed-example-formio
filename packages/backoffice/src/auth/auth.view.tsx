@@ -1,17 +1,37 @@
-import { BxIcon, useFormLoader } from "@project/shared";
-import { Form } from "@tsed/react-formio";
+import { BxIcon } from "@project/shared";
+import { Form, initAuth, setUser, Submission } from "@tsed/react-formio";
+import classnames from "classnames";
+import { push } from "connected-react-router";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Config } from "../config";
+import { useFormio } from "../utils/useFormio.hook";
 
 export function AuthView() {
-  const formLoader = useFormLoader({
+  const dispatch = useDispatch();
+  const formLoader = useFormio({
     name: "loader",
-    src: `${Config.formioUrl}/${Config.auth.login.form}`
+    src: `${Config.formioUrl}/${Config.auth.login.form}`,
+    onSubmitDone(submission: Submission) {
+      console.log("onSubmitDone", submission);
+      dispatch(
+        initAuth(() => {
+          console.log("====>", submission);
+          dispatch(setUser(submission));
+          dispatch(push(Config.auth.dashboard.path));
+        })
+      );
+    }
   });
 
   return (
-    <div className='flex justify-center flex-wrap pt-30'>
+    <div
+      className={classnames(
+        "flex justify-center flex-wrap pt-30",
+        formLoader.isActive && "hidden"
+      )}
+    >
       <div className='w-full h-full max-w-xs'>
         {/* <div className='p-10 flex justify-center text-blue'> */}
         {/*  <h1 className='text-4xl'>{projectTitle}</h1> */}
@@ -28,7 +48,7 @@ export function AuthView() {
             className={
               "flex items-center text-sm font-bold text-gray-500 hover:text-secondary focus:text-secondary transition-colors"
             }
-            to={"/register"}
+            to={Config.auth.register.path}
           >
             <span className={"underline"}>Create an account</span>
             <BxIcon name={"chevron-right"} className={"-mb-px"} />

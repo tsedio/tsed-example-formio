@@ -7,16 +7,20 @@ const appUrl = resolve(process.env.REACT_APP_URL);
 
 export const Config = {
   projectTitle: "Project",
+  headerHeight: "64px",
   formioUrl,
   apiUrl,
   appUrl,
   auth: {
-    anonState: "/auth",
-    authState: "/",
+    dashboard: {
+      path: "/"
+    },
     login: {
+      path: "/auth",
       form: "user/login"
     },
     register: {
+      path: "/register",
       form: "user/register"
     }
   }

@@ -1,18 +1,24 @@
 import { BxIcon } from "@project/shared";
-import { useFormLoader } from "@project/shared";
 import { Form } from "@tsed/react-formio";
+import classnames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Config } from "../config";
+import { useFormio } from "../utils/useFormio.hook";
 
 export const RegisterView = () => {
-  const formLoader = useFormLoader({
+  const formLoader = useFormio({
     name: "loader",
     src: `${Config.formioUrl}/${Config.auth.register.form}`
   });
 
   return (
-    <div className='flex justify-center flex-wrap pt-30'>
+    <div
+      className={classnames(
+        "flex justify-center flex-wrap pt-30",
+        formLoader.isActive && "hidden"
+      )}
+    >
       <div className='w-full h-full max-w-xs'>
         {/* <div className='p-10 flex justify-center text-blue'> */}
         {/*  <h1 className='text-4xl'>{projectTitle}</h1> */}
@@ -29,7 +35,7 @@ export const RegisterView = () => {
             className={
               "flex items-center text-sm font-bold text-gray-500 hover:text-secondary focus:text-secondary transition-colors"
             }
-            to={"/auth"}
+            to={Config.auth.login.path}
           >
             <span className={"underline"}>Log in</span>
             <BxIcon name={"chevron-right"} className={"-mb-px"} />

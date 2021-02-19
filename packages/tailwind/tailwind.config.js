@@ -70,7 +70,14 @@ Object.assign(exports, {
       'gray-light': '#d4d1d1',
       'gray-medium': '#a8a0a0',
       'gray-dark': '#998e8e',
-      'gray-darker': '#504747'
+      'gray-darker': '#504747',
+
+      // sidebar
+      'sidebar-white': '#D0D4D9',
+      'sidebar-white-active': '#FFFFFF',
+      'sidebar-icon': '#9EA6B2',
+      'sidebar-gray': '#252F3F',
+      'sidebar-gray-active': '#161D2E'
     },
 
     spacing: {
