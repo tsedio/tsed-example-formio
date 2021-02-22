@@ -1,10 +1,12 @@
-import { withIf } from "@project/shared/src";
+import { BxIcon, withIf } from "@project/shared/src";
+import { AuthState, useTooltip } from "@tsed/react-formio";
 import noop from "lodash/noop";
 import React from "react";
+import { ArianeLinks } from "./arianeLinks.component";
 import { HeaderButton } from "./header.button.component";
 
 export interface HeaderProps {
-  auth?: any;
+  auth?: AuthState;
   className?: string;
   height?: string;
   title?: string;
@@ -20,9 +22,12 @@ export function Header(props: HeaderProps) {
     height = "65px",
     title,
     onLogout = noop,
-    page,
-    currentTitle
+    page
   } = props;
+
+  const signoutRef = useTooltip({
+    title: "Logout"
+  });
 
   return (
     <div style={{ height }}>
@@ -48,70 +53,38 @@ export function Header(props: HeaderProps) {
                 style={{ flex: "1 1 auto" }}
               >
                 <li className='flex items-stretch'>
-                  {page && (
-                    <div
-                      className={"flex font-happiness items-center relative"}
-                    >
-                      <span
-                        style={{ top: "-2px" }}
-                        className={"flex items-center"}
-                      >
-                        {/*<BxIcon*/}
-                        {/*  svg={page.icon}*/}
-                        {/*  width='1.2rem'*/}
-                        {/*  className={"text-blue-active"}*/}
-                        {/*/>*/}
-                      </span>
-                      <span className={"flex items-center text-md ml-3"}>
-                        {page.parent.title}
-                        <span className={"text-xs mx-2 text-blue-active"}>
-                          {" "}
-                          &gt;{" "}
-                        </span>
-                        {page.title}
-                        {currentTitle ? (
-                          <span>
-                            <span className={"text-xs mx-2 text-blue-active"}>
-                              {" "}
-                              &gt;{" "}
-                            </span>{" "}
-                            {currentTitle}
-                          </span>
-                        ) : null}
-                      </span>
-                    </div>
-                  )}
+                  {page && <ArianeLinks page={page} />}
                 </li>
               </ul>
+
               <div className='flex flex-no-shrink relative'>
                 <div className={"flex relative px-4 items-center"}>
-                  {page && page.headerNav}
+                  {page && page.headerNav && <page.headerNav page={page} />}
                 </div>
 
                 <div
                   className={
-                    "header__user-info flex font-sans font-bold items-center px-4 relative text-blue"
+                    "header__user-info flex font-sans font-bold items-center px-4 relative text-primary"
                   }
                 >
                   <span
                     className={
-                      "bg-gray-light p-2 flex items-center rounded-full justify-center mr-1 text-white"
+                      "bg-gray-light p-1 flex items-center rounded-full justify-center mr-1 text-white"
                     }
                   >
-                    {/*<Icon svg={USER} width='0.8rem' />*/}
+                    <BxIcon name={"user"} className={"text-sm"} />
                   </span>
-                  <span className='ml-1'>
-                    {auth.user.data.firstName || "Super GO"}{" "}
-                    {auth.user.data.lastName}
-                  </span>
+                  <span className='ml-1'>{auth.user.data.email}</span>
                 </div>
 
                 <HeaderButton
-                  className={"header__link-logout"}
+                  ref={signoutRef}
+                  paddingX={0}
+                  className={"header__link-logout ml-2"}
                   to='/auth'
                   onClick={onLogout}
                 >
-                  {/*<Icon svg={SIGNOUT} width='1.0rem' />*/}
+                  <BxIcon name={"power-off"} className={"text-md"} />
                 </HeaderButton>
               </div>
             </div>

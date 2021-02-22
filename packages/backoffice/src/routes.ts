@@ -1,15 +1,45 @@
-import { Route } from "react-router";
+import { Route, RouteComponentProps, RouteProps } from "react-router";
 import { AuthView } from "./auth/auth.view";
+import { ProtectedRoute } from "./auth/protectedRoute.component";
 import { Config } from "./config";
+import { FormioView } from "./formio/formio.view";
+import {
+  FormioErrorEvent,
+  FormioSuccessEvent
+} from "./formio/interfaces/FormioViewOptions";
 import { HomeView } from "./home/home.view";
 import { RegisterView } from "./register/register.view";
+import { toastr } from "./toastr/toastr.util";
 
-export const routes: any[] = [
+export interface RouteConfig extends RouteProps {
+  guard?:
+    | React.ComponentType<RouteComponentProps<any>>
+    | React.ComponentType<any>;
+  /**
+   * options forwarded to the View (component)
+   */
+  options?: any;
+}
+
+export const routes: RouteConfig[] = [
   {
     path: Config.auth.dashboard.path,
     exact: true,
-    guard: Route,
+    guard: ProtectedRoute,
     component: HomeView
+  },
+  {
+    path: Config.forms.path,
+    guard: ProtectedRoute,
+    component: FormioView,
+    options: {
+      onSuccess(eventObj: FormioSuccessEvent) {
+        toastr.success(eventObj.title, eventObj.message);
+      },
+      onError(eventObj: FormioErrorEvent) {
+        toastr.error(eventObj.title, eventObj.message);
+      }
+    }
   },
   {
     path: Config.auth.login.path,
@@ -29,5 +59,3 @@ export const routes: any[] = [
     component: AuthView
   }
 ];
-
-console.log(routes);

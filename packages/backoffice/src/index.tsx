@@ -1,24 +1,40 @@
 import "@project/shared";
-import { Formio, initAuth, Templates } from "@tsed/react-formio";
+import { Formio, initAuth, logout, Templates } from "@tsed/react-formio";
 import tailwind from "@tsed/tailwind-formio";
 import { ConnectedRouter } from "connected-react-router";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import ReduxToastr from "react-redux-toastr";
+import { ToastContainer } from "./toastr/toastr.util";
 import App from "./App";
 import { Config } from "./config";
 import reportWebVitals from "./reportWebVitals";
 import configureStore, { history } from "./store";
 import "./styles.css";
 
+const store = configureStore({});
+
 // Formio configuration
 Formio.setProjectUrl(Config.formioUrl);
-Formio.setBaseUrl(Config.apiUrl);
+Formio.setBaseUrl(Config.formioUrl);
+
+Formio.registerPlugin(
+  {
+    priority: 0,
+    wrapRequestPromise(promise: Promise<any>) {
+      return promise.catch((er) => {
+        if (er === "Unauthorized") {
+          store.dispatch(logout());
+        }
+        throw er;
+      });
+    }
+  },
+  "connectStore"
+);
+
 Formio.use(tailwind);
 Templates.framework = "tailwind";
-
-const store = configureStore({});
 
 store.dispatch(initAuth() as any);
 
@@ -29,16 +45,7 @@ ReactDOM.render(
         <ConnectedRouter history={history}>
           <App />
         </ConnectedRouter>
-        <ReduxToastr
-          timeOut={4000}
-          newestOnTop={false}
-          preventDuplicates
-          position='bottom-right'
-          transitionIn='fadeIn'
-          transitionOut='fadeOut'
-          progressBar
-          closeOnToastrClick
-        />
+        <ToastContainer />
       </div>
     </Provider>
   </React.StrictMode>,

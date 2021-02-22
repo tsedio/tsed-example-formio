@@ -11,7 +11,7 @@ export function ToggleSidebar({ sidebarOpen, onClick }: ToggleSidebarProps) {
     <div
       onClick={onClick}
       className={
-        "transition-all cursor-pointer opacity-0 group-hover:opacity-100 absolute bottom-5 right-0 flex p-2 py-5 rounded-tl-sm rounded-bl-sm"
+        "transition-all cursor-pointer opacity-0 group-hover:opacity-100 absolute bottom-5 right-0 flex p-1 py-4 rounded-tl-sm rounded-bl-sm"
       }
       style={{ background: "rgb(255,255, 255, 0.1)" }}
     >

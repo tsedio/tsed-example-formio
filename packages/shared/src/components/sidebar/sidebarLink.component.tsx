@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BxIcon } from "../icon/bxIcon.component";
 
 export interface SidebarLinkProps extends Record<string, any> {
   href?: string;
@@ -18,10 +19,10 @@ export function SidebarLink({
     <Link
       to={href}
       className={
-        "text-sidebar-white hover:text-sidebar-white-active flex block transition-all hover:bg-sidebar-gray-active rounded-small p-2"
+        "text-sidebar-white hover:text-sidebar-white-active flex items-center block transition-all hover:bg-sidebar-gray-active rounded p-2"
       }
     >
-      {/*<Icon svg={icon} width='1.2rem' className={"text-sidebar-icon"}/>*/}
+      <BxIcon name={icon} className={"text-sidebar-icon text-lg"} />
       {sidebarOpen ? <span className={"flex-1 ml-1 px-2"}>{title}</span> : null}
     </Link>
   );

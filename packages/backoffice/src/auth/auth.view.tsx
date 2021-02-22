@@ -6,7 +6,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Config } from "../config";
-import { useFormio } from "../utils/useFormio.hook";
+import { useFormio } from "../formio/hooks/useFormio.hook";
 
 export function AuthView() {
   const dispatch = useDispatch();
@@ -14,10 +14,8 @@ export function AuthView() {
     name: "loader",
     src: `${Config.formioUrl}/${Config.auth.login.form}`,
     onSubmitDone(submission: Submission) {
-      console.log("onSubmitDone", submission);
       dispatch(
         initAuth(() => {
-          console.log("====>", submission);
           dispatch(setUser(submission));
           dispatch(push(Config.auth.dashboard.path));
         })

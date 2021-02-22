@@ -2,7 +2,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 import React, { PropsWithChildren } from "react";
 
-export interface ButtonProps {
+export interface ButtonProps extends Record<string, any> {
   component?: React.ComponentType<any> | string;
   borderColor?: string;
   bgColor?: string;

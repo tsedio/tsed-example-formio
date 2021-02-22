@@ -3,15 +3,14 @@ import { withIf } from "../../utils/directives/if.directive";
 import { SidebarGroup, SidebarGroupProps } from "./sidebarGroup.component";
 import { ToggleSidebar } from "./toggleSidebar.component";
 
-export interface SidebarProps {
+export interface SidebarProps extends Record<string, any> {
   className?: string;
-  title?: string;
   sidebarOpen?: boolean;
   height?: string;
   items?: SidebarGroupProps[];
   onToggle?: (event: React.MouseEvent) => void;
-  header?: React.ComponentType;
-  footer?: React.ComponentType;
+  header?: React.ComponentType<any>;
+  footer?: React.ComponentType<any>;
 }
 
 export function Sidebar({
@@ -20,18 +19,19 @@ export function Sidebar({
   height = "65px",
   items,
   onToggle,
-  header,
-  footer,
-  children
+  header: Header,
+  footer: Footer,
+  children,
+  ...props
 }: PropsWithChildren<SidebarProps>) {
   return (
     <aside
       className={`fixed m-0 top-0 left-0 bottom-0 z-10 overflow-hidden group bg-sidebar-gray text-sidebar-white transition-all ${className}`}
     >
       <div className={"absolute top-0 left-0 h-full flex flex-col w-64"}>
-        {header ? (
+        {Header ? (
           <div style={{ height }} className={"flex bg-sidebar-gray-active"}>
-            {header}
+            <Header {...props} sidebarOpen={sidebarOpen} />
           </div>
         ) : null}
         <ul className='reset-list py-3 flex-1 overflow-auto'>
@@ -48,9 +48,9 @@ export function Sidebar({
           })}
         </ul>
         {children}
-        {footer ? (
+        {Footer ? (
           <div style={{ height }} className={"flex bg-sidebar-gray-active"}>
-            {footer}
+            <Footer {...props} sidebarOpen={sidebarOpen} />
           </div>
         ) : null}
       </div>

@@ -4,7 +4,7 @@ import classnames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Config } from "../config";
-import { useFormio } from "../utils/useFormio.hook";
+import { useFormio } from "../formio/hooks/useFormio.hook";
 
 export const RegisterView = () => {
   const formLoader = useFormio({

@@ -1,7 +1,7 @@
 import { hideLoader, oneOfIsActive, showLoader } from "@project/shared";
 import { Submission } from "@tsed/react-formio";
 import { useDispatch, useSelector } from "react-redux";
-import { toastr } from "react-redux-toastr";
+import { toastr } from "../../toastr/toastr.util";
 
 export interface UseFormLoaderProps extends Record<string, any> {
   name: string;
