@@ -26,10 +26,13 @@ RUN apk update && apk add build-base git python
 COPY package.json .
 COPY yarn.lock .
 COPY processes.config.js .
+COPY lerna.json .
+COPY ./packages/backoffice/package.json ./packages/backoffice/package.json
 COPY ./packages/server/package.json ./packages/server/package.json
 
 RUN yarn install --production --frozen-lockfile --ignore-scripts
 
+COPY ./packages/backoffice/build ./packages/backoffice/build
 COPY ./packages/server ./packages/server
 
 EXPOSE 8083

@@ -1,5 +1,5 @@
 import "@tsed/ajv";
-import {$log, PlatformApplication} from "@tsed/common";
+import {$log, PlatformApplication, Res} from "@tsed/common";
 import {Configuration, Inject} from "@tsed/di";
 import "@tsed/formio";
 import "@tsed/mongoose";
@@ -9,14 +9,19 @@ import bodyParser from "body-parser";
 import compress from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import {ServerResponse} from "http";
 import methodOverride from "method-override";
+import {join} from "path";
 import {isProduction} from "./config/env";
 import formioConfig from "./config/formio";
 import mongooseConfig from "./config/mongoose";
 import swaggerConfig from "./config/swagger";
 import {VersionCtrl} from "./controllers/rest/version/VersionCtrl";
 
+const send = require("send");
+
 export const rootDir = __dirname;
+const backofficeDir = join(rootDir, "../../backoffice/build");
 
 // istanbul ignore next
 if (isProduction) {
@@ -35,6 +40,14 @@ if (isProduction) {
       type: "json"
     }
   });
+}
+
+function setCustomCacheControl(res: ServerResponse, path: string) {
+  if (send.mime.lookup(path) === "text/html") {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("expires", "0");
+  }
 }
 
 @Configuration({
@@ -56,7 +69,16 @@ if (isProduction) {
   },
   mongoose: mongooseConfig,
   formio: formioConfig,
-  exclude: ["**/*.spec.ts"]
+  exclude: ["**/*.spec.ts"],
+  statics: {
+    "/backoffice": [
+      {
+        root: backofficeDir,
+        maxAge: "1d",
+        setHeaders: setCustomCacheControl
+      }
+    ]
+  }
 })
 export class Server {
   @Inject()
@@ -77,5 +99,11 @@ export class Server {
           extended: true
         })
       );
+  }
+
+  $afterRoutesInit() {
+    this.app.get("/*", (req: any, res: Res) => {
+      res.sendFile(join(backofficeDir, "index.html"));
+    });
   }
 }

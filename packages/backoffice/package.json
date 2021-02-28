@@ -4,11 +4,11 @@
   "private": true,
   "author": "Romain Lenzotti",
   "dependencies": {
-    "@project/config": "1.0.0",
-    "@project/shared": "1.0.0"
+    "cross-env": "^7.0.3"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@project/config": "1.0.0",
+    "@project/shared": "1.0.0"
   },
   "scripts": {
     "start": "yarn craco start",
