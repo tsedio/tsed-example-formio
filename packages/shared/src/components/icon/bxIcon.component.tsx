@@ -2,13 +2,15 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
-export interface BxIconProps {
+export interface BxIconProps extends Record<string, unknown> {
   name: string;
   color?: string;
+  size?: string;
   className?: string;
 }
 
-export function BxIcon({ name, color, className = "" }: BxIconProps) {
+// eslint-disable-next-line react/display-name
+export const BxIcon = ({ name, color, className = "" }: BxIconProps) => {
   className = classnames(
     "bx",
     name.includes("bx") ? name : `bx-${name}`,
@@ -16,8 +18,8 @@ export function BxIcon({ name, color, className = "" }: BxIconProps) {
     className
   );
 
-  return <i className={className} />;
-}
+  return <i data-testid={"icon"} className={className} />;
+};
 
 BxIcon.propTypes = {
   name: PropTypes.string.isRequired,

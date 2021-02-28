@@ -53,11 +53,16 @@ export const Button = ({
       {...otherProps}
       disabled={disabled}
       className={classnames(classNames, className)}
+      data-testid={"button"}
     >
       <span
+        data-testid={"buttonSpan"}
         className={`reset-link flex justify-center items-center w-full font-${fontWeight} px-${paddingX} py-${paddingY}`}
       >
-        <span className='m-1 text-center flex justify-center items-center'>
+        <span
+          data-testid={"buttonWrapper"}
+          className='m-1 text-center flex justify-center items-center'
+        >
           {children}
         </span>
       </span>

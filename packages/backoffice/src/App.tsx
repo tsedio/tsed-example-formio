@@ -66,7 +66,7 @@ function App() {
         title={Config.projectTitle}
         header={SiderbarHeader}
         height={headerHeight}
-        className={`w-${size}`}
+        width={size}
         sidebarOpen={sidebarOpen}
         onToggle={toggleSidebar}
         items={nav.getNav("sidebar")}

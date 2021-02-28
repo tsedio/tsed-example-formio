@@ -10,7 +10,7 @@
     "start": "tsnd --inspect --ignore-watch node_modules --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "start:prod": "cross-env NODE_ENV=production node dist/index.js",
     "test": "yarn test:lint && yarn test:coverage",
-    "test:unit": "cross-env NODE_ENV=test jest",
+    "test:unit": "cross-env NODE_ENV=test CI=1 jest",
     "test:coverage": "yarn test:unit",
     "test:lint": "yarn eslint src --ext .ts",
     "test:lint:fix": "yarn eslint src --ext .ts --fix",

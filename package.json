@@ -24,9 +24,10 @@
   },
   "react-table": "^7.6.3",
   "dependencies": {
-    "@tsed/react-formio": "^1.6.1",
-    "@tsed/redux-utils": "^1.6.1",
-    "@tsed/tailwind-formio": "^1.6.1",
+    "@tsed/react-formio": "^1.8.5",
+    "@tsed/react-formio-container": "^1.8.5",
+    "@tsed/redux-utils": "^1.8.5",
+    "@tsed/tailwind-formio": "^1.8.5",
     "classnames": "2.2.6",
     "connected-react-router": "6.8.0",
     "file-saver": "2.0.5",
@@ -48,6 +49,10 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@craco/craco": "6.1.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@types/classnames": "2.2.11",
     "@types/ejs": "3.0.5",
     "@types/enzyme": "3.10.8",

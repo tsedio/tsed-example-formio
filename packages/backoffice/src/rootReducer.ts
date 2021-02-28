@@ -12,7 +12,9 @@ export const rootReducers = (history: any) =>
     ...combine(
       navReducer("nav"),
       loaderReducer("loader"),
-      formsReducer("forms", { query: { type: "form" } }),
-      formsReducer("resources", { query: { type: "resource" } })
+      formsReducer("forms", { query: { type: "form", tags: ["common"] } }),
+      formsReducer("resources", {
+        query: { type: "resource", tags: ["common"] }
+      })
     )
   });

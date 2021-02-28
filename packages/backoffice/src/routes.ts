@@ -1,12 +1,8 @@
+import { FormioContainer, FormioEventObj } from "@tsed/react-formio-container";
 import { Route, RouteComponentProps, RouteProps } from "react-router";
 import { AuthView } from "./auth/auth.view";
 import { ProtectedRoute } from "./auth/protectedRoute.component";
 import { Config } from "./config";
-import { FormioView } from "./formio/formio.view";
-import {
-  FormioErrorEvent,
-  FormioSuccessEvent
-} from "./formio/interfaces/FormioViewOptions";
 import { HomeView } from "./home/home.view";
 import { RegisterView } from "./register/register.view";
 import { toastr } from "./toastr/toastr.util";
@@ -31,12 +27,12 @@ export const routes: RouteConfig[] = [
   {
     path: Config.forms.path,
     guard: ProtectedRoute,
-    component: FormioView,
+    component: FormioContainer,
     options: {
-      onSuccess(eventObj: FormioSuccessEvent) {
+      onSuccess(eventObj: FormioEventObj) {
         toastr.success(eventObj.title, eventObj.message);
       },
-      onError(eventObj: FormioErrorEvent) {
+      onError(eventObj: FormioEventObj) {
         toastr.error(eventObj.title, eventObj.message);
       }
     }

@@ -7,6 +7,8 @@ describe("VersionCtrl", () => {
   it("should return version", async () => {
     const controller = await PlatformTest.invoke<VersionCtrl>(VersionCtrl);
 
-    expect(controller).toBeInstanceOf(VersionCtrl);
+    expect(controller.get()).toEqual({
+      version: require("../../../../package.json").version
+    });
   });
 });

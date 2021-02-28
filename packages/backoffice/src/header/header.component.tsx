@@ -1,8 +1,7 @@
-import { BxIcon, withIf } from "@project/shared/src";
+import { ArianeLinks, BxIcon, withIf } from "@project/shared";
 import { AuthState, useTooltip } from "@tsed/react-formio";
 import noop from "lodash/noop";
 import React from "react";
-import { ArianeLinks } from "./arianeLinks.component";
 import { HeaderButton } from "./header.button.component";
 
 export interface HeaderProps {

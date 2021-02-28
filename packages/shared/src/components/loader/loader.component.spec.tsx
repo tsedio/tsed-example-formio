@@ -1,25 +1,21 @@
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import React from "react";
-import { Fade } from "../fade/fade.component";
-import { BxIcon } from "../icon/bxIcon.component";
 import { Loader } from "./loader.component";
 
 describe("Loader", () => {
-  const shallowComponent = (props) => {
-    return shallow(<Loader {...props} />);
-  };
-
   it("should render a component (with isActive = true)", () => {
-    const cmp = shallowComponent({ isActive: true });
+    const { getByTestId } = render(<Loader isActive={true} />);
 
-    expect(cmp.find(BxIcon)).toHaveLength(1);
-    expect(cmp.find(Fade).props().show).toEqual(true);
+    const icon = getByTestId("icon");
+
+    expect(icon).toBeTruthy();
   });
 
   it("should render a component (with isActive = false)", () => {
-    const cmp = shallowComponent({ isActive: false });
+    const { queryByTestId } = render(<Loader isActive={false} />);
 
-    expect(cmp.find(BxIcon)).toHaveLength(1);
-    expect(cmp.find(Fade).props().show).toEqual(false);
+    const icon = queryByTestId("icon");
+
+    expect(icon).toBeFalsy();
   });
 });

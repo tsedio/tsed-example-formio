@@ -1,4 +1,5 @@
-import { mount } from "enzyme";
+import "@testing-library/jest-dom/extend-expect";
+import { render } from "@testing-library/react";
 import React from "react";
 import { Button } from "./button.component";
 
@@ -6,49 +7,52 @@ describe("Button", () => {
   describe("rendering", () => {
     it("should render a button with default tag and label", () => {
       // WHEN
-      const component = mount(<Button>Label</Button>);
+      const { getByTestId } = render(<Button>Label</Button>);
 
       // THEN
-      const button = component.find("button");
-      expect(component.find("button span span").contains("Label")).toEqual(
-        true
-      );
-      expect(button.hasClass("bg-primary")).toEqual(true);
-      expect(button.hasClass("border-primary")).toEqual(true);
-      expect(button.hasClass("text-white")).toEqual(true);
-      expect(button.hasClass("focus:bg-primary-active")).toEqual(true);
-      expect(button.hasClass("focus:border-primary-active")).toEqual(true);
-      expect(button.hasClass("hover:bg-primary-active")).toEqual(true);
-      expect(button.hasClass("hover:border-primary-active")).toEqual(true);
-      expect(button.hasClass("cursor-pointer")).toEqual(true);
-      expect(component.find("button > span").hasClass("font-bold")).toEqual(
-        true
-      );
-      expect(component.find("button > span").hasClass("px-4")).toEqual(true);
-      expect(component.find("button > span").hasClass("py-1")).toEqual(true);
+      const button = getByTestId("button");
+      const buttonSpan = getByTestId("buttonSpan");
+      expect(button).toHaveTextContent("Label");
+      expect(button.classList.contains("bg-primary")).toBeTruthy();
+      expect(button.classList.contains("bg-primary")).toBeTruthy();
+      expect(button.classList.contains("border-primary")).toBeTruthy();
+      expect(button.classList.contains("text-white")).toBeTruthy();
+      expect(button.classList.contains("focus:bg-primary-active")).toBeTruthy();
+      expect(
+        button.classList.contains("focus:border-primary-active")
+      ).toBeTruthy();
+      expect(button.classList.contains("hover:bg-primary-active")).toBeTruthy();
+      expect(
+        button.classList.contains("hover:border-primary-active")
+      ).toBeTruthy();
+      expect(button.classList.contains("cursor-pointer")).toBeTruthy();
+      expect(buttonSpan.classList.contains("font-bold")).toBeTruthy();
+      expect(buttonSpan.classList.contains("px-4")).toBeTruthy();
+      expect(buttonSpan.classList.contains("py-1")).toBeTruthy();
     });
 
     it("should render a custom  given tag with default tag and label", () => {
       // WHEN
-      const component = mount(<Button component='a'>Label</Button>);
+      const { getByTestId } = render(<Button component='a'>Label</Button>);
 
       // THEN
-      expect(component.find("a span span").contains("Label")).toEqual(true);
+      const button = getByTestId("button");
+      expect(button).toHaveTextContent("Label");
     });
 
     it("should render a disabled component", () => {
       // WHEN
-      const component = mount(<Button disabled={true}>Label</Button>);
+      const { getByTestId } = render(<Button disabled={true}>Label</Button>);
 
       // THEN
-      const button = component.find("button");
+      const button = getByTestId("button");
 
-      expect(button.hasClass("opacity-50")).toEqual(true);
+      expect(button.classList.contains("opacity-50")).toBeTruthy();
     });
 
     it("should render button with customer color", () => {
       // WHEN
-      const component = mount(
+      const { getByTestId } = render(
         <Button
           bgColor={"red"}
           borderColor={"yellow"}
@@ -62,22 +66,21 @@ describe("Button", () => {
       );
 
       // THEN
-      const button = component.find("button");
+      const button = getByTestId("button");
+      const buttonSpan = getByTestId("buttonSpan");
 
-      expect(button.hasClass("bg-red")).toEqual(true);
-      expect(button.hasClass("text-black")).toEqual(true);
-      expect(button.hasClass("border-yellow")).toEqual(true);
-      expect(button.hasClass("focus:bg-red-800")).toEqual(true);
-      expect(button.hasClass("focus:border-yellow-800")).toEqual(true);
-      expect(button.hasClass("hover:bg-red-800")).toEqual(true);
-      expect(button.hasClass("hover:border-yellow-800")).toEqual(true);
-      expect(button.hasClass("focus:text-black-800")).toEqual(true);
-      expect(button.hasClass("hover:text-black-800")).toEqual(true);
-      expect(component.find("button > span").hasClass("font-lighter")).toEqual(
-        true
-      );
-      expect(component.find("button > span").hasClass("px-2")).toEqual(true);
-      expect(component.find("button > span").hasClass("py-3")).toEqual(true);
+      expect(button.classList.contains("bg-red")).toBeTruthy();
+      expect(button.classList.contains("text-black")).toBeTruthy();
+      expect(button.classList.contains("border-yellow")).toBeTruthy();
+      expect(button.classList.contains("focus:bg-red-800")).toBeTruthy();
+      expect(button.classList.contains("focus:border-yellow-800")).toBeTruthy();
+      expect(button.classList.contains("hover:bg-red-800")).toBeTruthy();
+      expect(button.classList.contains("hover:border-yellow-800")).toBeTruthy();
+      expect(button.classList.contains("focus:text-black-800")).toBeTruthy();
+      expect(button.classList.contains("hover:text-black-800")).toBeTruthy();
+      expect(buttonSpan.classList.contains("font-lighter")).toBeTruthy();
+      expect(buttonSpan.classList.contains("px-2")).toBeTruthy();
+      expect(buttonSpan.classList.contains("py-3")).toBeTruthy();
     });
   });
 });

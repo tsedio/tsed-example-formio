@@ -9,7 +9,7 @@ export interface SidebarGroupProps {
 
 export function SidebarGroup({ title, items, sidebarOpen }: SidebarGroupProps) {
   return (
-    <div className={"w-full pb-3 " + (sidebarOpen ? "" : "first:pb-3 pb-5")}>
+    <div className={`w-full pb-3 ${sidebarOpen ? "" : "first:pb-3 pb-5"}`}>
       {sidebarOpen ? (
         <p className='flex items-center justify-start text-md pt-2 pb-1 pl-2 pr-2 m-0'>
           <span className={"font-happiness font-bold"}>{title}</span>

@@ -4,7 +4,7 @@ import toLower from "lodash/toLower";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Title({ title, page }: any) {
+function Title({ page }: any) {
   if (!page.form) {
     return page.title;
   }

@@ -27,14 +27,12 @@ function createInitialState(): NavState {
   };
 }
 
-export const navReducer = createReducer<NavState>(
-  {
-    [receiveNav.toString()](state, { items }) {
-      return {
-        ...state,
-        data: nav.concat(items)
-      };
-    }
-  },
-  createInitialState
+export const navReducer = createReducer<NavState>({}, createInitialState).on(
+  receiveNav,
+  (state, { items }) => {
+    return {
+      ...state,
+      data: nav.concat(items)
+    };
+  }
 );

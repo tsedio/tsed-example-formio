@@ -10,20 +10,16 @@ const createInitialState = (options = {}) => ({
   ...options
 });
 
-export const loaderReducer = createReducer<LoaderState>(
-  {
-    [hideLoader.toString()](state) {
-      return {
-        ...state,
-        isActive: false
-      };
-    },
-    [showLoader.toString()](state) {
-      return {
-        ...state,
-        isActive: true
-      };
-    }
-  },
-  createInitialState
-);
+export const loaderReducer = createReducer<LoaderState>({}, createInitialState)
+  .on(hideLoader, (state) => {
+    return {
+      ...state,
+      isActive: false
+    };
+  })
+  .on(showLoader, (state) => {
+    return {
+      ...state,
+      isActive: true
+    };
+  });

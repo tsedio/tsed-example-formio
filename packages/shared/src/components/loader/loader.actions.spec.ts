@@ -5,7 +5,7 @@ describe("Loader actions", () => {
     it("should return action data", () => {
       expect(showLoader("loader")).toEqual({
         name: "loader",
-        type: "HIDE_LOADER"
+        type: showLoader.toString()
       });
     });
   });
@@ -13,7 +13,7 @@ describe("Loader actions", () => {
     it("should return action data", () => {
       expect(hideLoader("loader")).toEqual({
         name: "loader",
-        type: "SHOW_LOADER"
+        type: hideLoader.toString()
       });
     });
   });

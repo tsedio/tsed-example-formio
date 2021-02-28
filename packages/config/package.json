@@ -10,17 +10,9 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@craco/craco": "6.1.1",
     "@project/tailwind": "1.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "@tsed/yarn-workspaces": "1.15.1",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.6",
-    "enzyme-to-json": "3.4.4",
-    "postcss-nested": "4.2.3",
-    "react-scripts": "4.0.1"
+    "postcss-nested": "4.2.3"
   },
   "peerDependencies": {}
 }
