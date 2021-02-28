@@ -1,3 +1,4 @@
+import template from "./project.json";
 export default {
   baseUrl: "/projects",
   jwt: {
@@ -8,5 +9,5 @@ export default {
     email: process.env.FORMIO_ROOM_EMAIL || "admin@tsed.io",
     password: process.env.FORMIO_ROOM_PASSWORD || "admin@tsed.io"
   },
-  template: require("./project.json")
+  template
 };

@@ -1,15 +1,15 @@
 version: '3.3'
 services:
-  backoffice:
-    image: nginx:1.14
-    ports:
-      - 3000:80
-    volumes:
-      - ./packages/backoffice/build:/usr/share/nginx/html
-  mongodb:
+  mongo:
     image: 'mongo:4.1'
+    restart: always
+    volumes:
+      - mdb-data:/data/db
     ports:
       - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME:
+      MONGO_INITDB_ROOT_PASSWORD:
   server:
     build:
       context: .
@@ -25,4 +25,8 @@ services:
     tty: true         # -t
     environment:
       - NODE_ENV=development
-
+      - MONGOOSE_URL= mongodb://mongo:27017/tsed-formio-example
+    depends_on:
+      - mongo
+volumes:
+  mdb-data:
