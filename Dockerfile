@@ -20,13 +20,10 @@ RUN apk update
 COPY package.json .
 COPY yarn.lock .
 COPY lerna.json .
+COPY processes.config.js .
 
 RUN apk update && apk add build-base git python
 
-COPY package.json .
-COPY yarn.lock .
-COPY processes.config.js .
-COPY lerna.json .
 COPY ./packages/backoffice/package.json ./packages/backoffice/package.json
 COPY ./packages/server/package.json ./packages/server/package.json
 
