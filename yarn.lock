@@ -4529,10 +4529,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/openspec/-/openspec-6.26.1.tgz#936c831cf90731b71fe27f045a12d692b726cf23"
   integrity sha512-DLglZkbKHGv0nwgtaMniiZWQ6yZUYfcvUCeNqKpFJF5483Hps0WjO5jEV7hpCe4fHxqWYQUuDlZ/2NV3up+MAw==
 
-"@tsed/passport@6.26.1":
-  version "6.26.1"
-  resolved "https://registry.yarnpkg.com/@tsed/passport/-/passport-6.26.1.tgz#920f8de044e965c942956637ca47007cee203b83"
-  integrity sha512-67J3EFrJ0EN00fN4KhDdIIbVdut2fMixzAbyTrRTBC/OEXpqZ1KRiPdiafHW1amtc/zw9fCKXUxfDiq6QWRo3w==
+"@tsed/passport@6.26.4":
+  version "6.26.4"
+  resolved "https://registry.yarnpkg.com/@tsed/passport/-/passport-6.26.4.tgz#5f733b2744f72bbfe450b5c4f050eb818357973e"
+  integrity sha512-Vb5Y9EtzSwwaMsxtOB0OKe2GGOgSb75AD3xzJe716vFP7/Y03CDR7XVJvvGn3ot/hWfE3O3WmX18/8FMa38liA==
   dependencies:
     tslib "2.0.1"
 
@@ -15811,9 +15811,9 @@ mongoose-legacy-pluralize@1.0.2:
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
 mongoose@^5.11.12, mongoose@^5.11.14:
-  version "5.11.17"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.11.17.tgz#260b1e669d07a65f96c00b2d22f556f1f5771741"
-  integrity sha512-qggwwv+oTsjvlto9fhq17l2Mojl5Gn8GN7NxnaLjsZbjT4O5ONtKtGtymHZ23viGrlHn6rNFMJEnEql2G6tyrg==
+  version "5.11.18"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.11.18.tgz#76fdcefeb2afc7409705fc44b58045953bba5ee1"
+  integrity sha512-RsrPR9nhkXZbO3ml0DcmdbfeMvFNhgFrP81S6o1P+lFnDTNEKYnGNRCIL+ojD69wj7H5jJaAdZ0SJ5IlKxCHqw==
   dependencies:
     "@types/mongodb" "^3.5.27"
     bson "^1.1.4"

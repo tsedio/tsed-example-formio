@@ -25,7 +25,7 @@
     "@tsed/exceptions": "6.26.1",
     "@tsed/json-mapper": "6.26.1",
     "@tsed/mongoose": "6.26.1",
-    "@tsed/passport": "6.26.1",
+    "@tsed/passport": "6.26.4",
     "@tsed/platform-express": "6.26.1",
     "@tsed/schema": "6.26.1",
     "@tsed/swagger": "6.26.1",
