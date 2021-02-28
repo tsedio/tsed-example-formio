@@ -10,6 +10,8 @@ See [Ts.ED](https://tsed.io) project for more information.
 
 - React project generated with CRACO,
 - Lerna && Yarn workspaces - monorepo manager
+- MongoDB
+- Formio
 - PM2 - node process manager
 - Docker and Docker compose
 
@@ -42,11 +44,12 @@ Replace all reference `@project` by your project name. `@project` key are refere
 - `package.json`,
 - `**/package.json`
 
-Open Server.ts and modify the SQL Server Settings, if you are using some other detabase then please change the driver details and database details in the TYPEORM section. Pleaes make sure that the table Employee exists with the columns(id,empfname,emplname,createdDate,lastModifiedDate) as specified in the entities/Employee.ts
+Open Server.ts and modify the Mongoose Settings, if you are using some other detabase then please change the driver details and database details in the mongoose section.
 
 ## Run
 
-```
+```bash
+docker-compose up -d mongo
 yarn start
 ```
 
