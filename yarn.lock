@@ -4655,6 +4655,16 @@
     source-map-support "0.5.19"
     tslib "2.0.1"
 
+"@tsed/core@6.26.4":
+  version "6.26.4"
+  resolved "https://registry.yarnpkg.com/@tsed/core/-/core-6.26.4.tgz#ade7e3873c6b02cfa7eaf11cc3b416686e8e40b2"
+  integrity sha512-/8d+639cJPYhBEcTDmTLeNmAGnfUBsJNZg1j6gamkYzWcG7YAqEzZSIhspqOaBOfQqFcYF3t0P24oNTa9QfAlg==
+  dependencies:
+    normalize-path "3.0.0"
+    reflect-metadata "^0.1.13"
+    source-map-support "0.5.19"
+    tslib "2.0.1"
+
 "@tsed/di@6.26.1":
   version "6.26.1"
   resolved "https://registry.yarnpkg.com/@tsed/di/-/di-6.26.1.tgz#c920fe23b1fc4e0f0c8aa37c84d6b51b7627972a"
@@ -4709,6 +4719,11 @@
   version "6.26.1"
   resolved "https://registry.yarnpkg.com/@tsed/openspec/-/openspec-6.26.1.tgz#936c831cf90731b71fe27f045a12d692b726cf23"
   integrity sha512-DLglZkbKHGv0nwgtaMniiZWQ6yZUYfcvUCeNqKpFJF5483Hps0WjO5jEV7hpCe4fHxqWYQUuDlZ/2NV3up+MAw==
+
+"@tsed/openspec@6.26.4":
+  version "6.26.4"
+  resolved "https://registry.yarnpkg.com/@tsed/openspec/-/openspec-6.26.4.tgz#24ff0e9169e8b0d37035f3b384377bc264c26263"
+  integrity sha512-CH/30DO5Bz6ZEuZaM/ohXPFxbMAmk/oK/p+I5Eh1gUYRZCHgpqsSIKKaF6TbCC/fQXQwCBf+xTBgcdsbauVlZQ==
 
 "@tsed/passport@6.26.1":
   version "6.26.1"
@@ -4765,6 +4780,17 @@
   dependencies:
     "@tsed/core" "6.26.1"
     "@tsed/openspec" "6.26.1"
+    change-case "4.1.1"
+    micromatch "4.0.2"
+    tslib "2.0.1"
+
+"@tsed/schema@6.26.4":
+  version "6.26.4"
+  resolved "https://registry.yarnpkg.com/@tsed/schema/-/schema-6.26.4.tgz#fb24191bf78463e34e90d2e1383db2e9b2405cc6"
+  integrity sha512-RM9ZosmcPIPK/guaRZwrH0QD9MMaVVKZZ+OCJfjzuI5CeIJvYRDSMMdcNXCWPKxYFIL5z6ohmLOGsG8vJ6Mb7g==
+  dependencies:
+    "@tsed/core" "6.26.4"
+    "@tsed/openspec" "6.26.4"
     change-case "4.1.1"
     micromatch "4.0.2"
     tslib "2.0.1"

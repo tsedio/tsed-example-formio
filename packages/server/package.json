@@ -27,7 +27,7 @@
     "@tsed/mongoose": "6.26.1",
     "@tsed/passport": "6.26.1",
     "@tsed/platform-express": "6.26.1",
-    "@tsed/schema": "6.26.1",
+    "@tsed/schema": "6.26.4",
     "@tsed/swagger": "6.26.1",
     "@tsed/formio": "6.26.1",
     "ajv": "^7.0.4",
