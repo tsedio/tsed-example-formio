@@ -4725,10 +4725,10 @@
     express "^4.17.1"
     multer "^1.4.2"
 
-"@tsed/react-formio-container@^1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@tsed/react-formio-container/-/react-formio-container-1.8.5.tgz#6df81196a4602c7876eb40af563c07d9f9ca4eb3"
-  integrity sha512-1ikqwOaNozDJ4xntvPQUv7qOH+sf+0mKj52l3atRnUq0ZOUA+ONoWPZaljvWRajUzOE/oLh/+npd8Xe9Y8Z6Ng==
+"@tsed/react-formio-container@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@tsed/react-formio-container/-/react-formio-container-1.8.6.tgz#1b3ba5b69ccabcabfab78269281a3a0f28e0f33a"
+  integrity sha512-3nV3voIWFWs5MmzsyIdfHc8C1TzGGVBLKuJTEpNeMKxTgJPRyAfMKcB4cSkVbjvKwCfljjp4QNQDVmIEElDHUg==
 
 "@tsed/react-formio@^1.1.0":
   version "1.1.0"
@@ -4739,12 +4739,12 @@
     eventemitter2 "^6.4.3"
     prop-types "^15.7.2"
 
-"@tsed/react-formio@^1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@tsed/react-formio/-/react-formio-1.8.5.tgz#fff363bd828da9fd10f4c9a1ca2adb96bb13e1ff"
-  integrity sha512-571DYbWSst2QurCBgjM1bpbwVou9lNuioQ9zi+rfKQjctVnkDRsjCclf6itU/qvr6NLQ5k9qRrt4H5fk60XnzQ==
+"@tsed/react-formio@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@tsed/react-formio/-/react-formio-1.8.6.tgz#8c6abe616eddcfe6de6610c96773d8661cffed3a"
+  integrity sha512-oMx7/rIjRjlSEyW4cEDig7itbLY7Hs8py7nunEO5umGcS3GMetrYj/Na7N1LnDt3w56v9uiyK5ATJZj2UrZx6w==
   dependencies:
-    "@tsed/redux-utils" "1.8.5"
+    "@tsed/redux-utils" "1.8.6"
     eventemitter2 "^6.4.3"
     prop-types "^15.7.2"
 
@@ -4753,10 +4753,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/redux-utils/-/redux-utils-1.1.0.tgz#750f66d6d9556c44d97e2f82b7b9b53459c831ea"
   integrity sha512-B+pb69HTLDSdyqgK1ZX4q5BVXAYtDcY5hpWmvYHO3AUz2hGXaodmr1QaEATh901X77avwi1/URANCk0eV0nRmQ==
 
-"@tsed/redux-utils@1.8.5", "@tsed/redux-utils@^1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@tsed/redux-utils/-/redux-utils-1.8.5.tgz#c289bb3237966d36dbcb81b28a2f6fbf1211b96c"
-  integrity sha512-lZwb9gvGe3l3I285xg2GZF8uU6UKrngkTka6pz9LZdAaE78Wk715sUJqhvgeMuDWh8HF1h83F2pJQPexZjop1A==
+"@tsed/redux-utils@1.8.6", "@tsed/redux-utils@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@tsed/redux-utils/-/redux-utils-1.8.6.tgz#55c8aa794ffb0e62fe70b8d9855f089f74cfae28"
+  integrity sha512-SwYihXb2ATtu4jOE2DZUkX9fhVpJJChpACK/Q+mjpo/iwsoXiJ0VIcLtIEQiFcZwpmfsqTHwI84eXgXWDm9FHQ==
 
 "@tsed/schema@6.26.1":
   version "6.26.1"
@@ -4782,10 +4782,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/tailwind-formio/-/tailwind-formio-1.1.0.tgz#50e2f785ea76e16a25e75d865597d7b89e02357f"
   integrity sha512-82K9ZyNU4sjSSzk7HXlV8AofU6pUS2/DtoQITu+1EeGI2lyVlpvqq76IsOH+gXF2kcGXktBafTtJdAZpkeB+SQ==
 
-"@tsed/tailwind-formio@^1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@tsed/tailwind-formio/-/tailwind-formio-1.8.5.tgz#201af8b162b1f3c7fbbb085060154c9feea90881"
-  integrity sha512-jRIwWoosVX+xe/TdvhjMxuijxyzJGxHxGmEl1evn8rfTJ1d+DOOU1qqqjnOfaLmQmimWTYAFRegttoH3i3qZJg==
+"@tsed/tailwind-formio@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@tsed/tailwind-formio/-/tailwind-formio-1.8.6.tgz#bf3334685de0b244fa3774b9fcf9fc4eaa95faa1"
+  integrity sha512-9huq1HEgBl6aanWTkm08hopkdkPlG0PKWT1xuONJFQmqK/qLyl9fLPQe2H6+ls//Gt+5MiUWPh9aDiqvezuQOA==
 
 "@tsed/testing-mongoose@6.26.1":
   version "6.26.1"
@@ -6888,15 +6888,6 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
   integrity sha1-viQcqBQEAwZ4t0hxcyK4nQyP4oA=
 
-babel-polyfill@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
-  integrity sha1-N5k3q8Z9eJWXCtxiHyhM2WbPIVM=
-  dependencies:
-    babel-runtime "^6.26.0"
-    core-js "^2.5.0"
-    regenerator-runtime "^0.10.5"
-
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"
@@ -8721,12 +8712,12 @@ core-js@3.5.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.5.0.tgz#66df8e49be4bd775e6f952a9d083b756ad41c1ed"
   integrity sha512-Ifh3kj78gzQ7NAoJXeTu+XwzDld0QRIwjBLRqAMhuLhP3d2Av5wmgE9ycfnvK6NAEjTkQ1sDPeoEZAWO3Hx1Uw==
 
-core-js@^2.4.0, core-js@^2.5.0:
+core-js@^2.4.0:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.0.1, core-js@^3.0.4, core-js@^3.1.4, core-js@^3.6.5, core-js@^3.8.3:
+core-js@^3.0.1, core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.3:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.9.0.tgz#790b1bb11553a2272b36e2625c7179db345492f8"
   integrity sha512-PyFBJaLq93FlyYdsndE5VaueA9K5cNB7CGzeCj191YYLhkQM0gdZR2SKihM70oF0wdqKSKClv/tEBOpoRmdOVQ==
@@ -11550,7 +11541,7 @@ formio@2.0.0-rc.42:
     through "^2.3.8"
     vanilla-text-mask "^5.1.1"
 
-formiojs@^4.12.4, formiojs@^4.12.7, formiojs@^4.9.0:
+formiojs@^4.12.4, formiojs@^4.12.7:
   version "4.12.7"
   resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.12.7.tgz#34741cb2e314703462a0ca1b77cc2dae78a3b6dc"
   integrity sha512-Li8BdvT9yETfPsuBOQK/8kqLStN0EyJF11oNAHZK2qFxqWRqHcFGusJfhSBNDnFO9TnoRjIE3mUXonOuh1mumw==
@@ -19031,18 +19022,6 @@ react-focus-lock@^2.1.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-formio@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-formio/-/react-formio-4.3.0.tgz#2bea3f0db850d25f4b171117deb55f7c1051c1c4"
-  integrity sha512-oCWR449XIxJeShxbbSCwAOOv3CmPehLvRPSyuPAVHYhHoRzkE5m/cdC7f36EDo4dHorlVcq3zt/m4F/6TKLLiA==
-  dependencies:
-    babel-polyfill "^6.26.0"
-    core-js "^3.1.4"
-    eventemitter2 "^5.0.1"
-    formiojs "^4.9.0"
-    lodash "^4.17.15"
-    prop-types "^15.7.2"
-
 react-helmet-async@^1.0.2:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-helmet-async/-/react-helmet-async-1.0.7.tgz#b988fbc3abdc4b704982bb74b9cb4a08fcf062c1"
@@ -19616,11 +19595,6 @@ regenerate@^1.4.0:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
-
-regenerator-runtime@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
-  integrity sha1-M2w+/BIgrc7dosn6tntaeVWjNlg=
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"

@@ -4,7 +4,9 @@ import thunk from "redux-thunk";
 import { createBrowserHistory } from "history";
 import { rootReducers } from "./rootReducer";
 
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({
+  basename: process.env.REACT_APP_BASE_PATH
+});
 
 const enhancers: any[] = [];
 const middleware = [thunk, routerMiddleware(history)];
